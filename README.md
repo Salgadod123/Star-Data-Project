@@ -1,31 +1,48 @@
-# Star Data Project
-Analysis of star data
-Star Data Exploration & Clustering Project
+# Stellar Catalog Exploration and Clustering
 
-This project demonstrates my ability to work with real-world astronomical data by exploring and analyzing a star catalog. The focus was on data filtering, SQL querying, visualization, and machine learning clustering, all done in a Jupyter notebook environment.
- Skills Demonstrated
+This project explores the HYG stellar catalog with Python and SQLite. It combines data loading, filtering, statistical visualization, feature scaling, KMeans clustering, and two- and three-dimensional views of astronomical catalog data.
 
-    Data visualization using Matplotlib and Seaborn, with various plot styles (scatter plots, histograms, log-log scales, and cluster visualizations)
+## Objective
 
-    Data cleaning and filtering, including handling placeholder values and interpreting astrophysical data quirks (like logarithmic binning and distance estimation)
+Investigate relationships among stellar magnitude, luminosity, distance, color index, and spatial position while demonstrating an exploratory workflow that spans SQL, scientific visualization, and introductory machine learning.
 
-    Machine learning clustering with KMeans to find structure in high-dimensional stellar features
+## Tools and Technologies
 
-    SQL querying  for selective data extraction and logic-based filtering
+- Python and pandas
+- SQL, SQLite, and SQLAlchemy
+- Matplotlib, Seaborn, and Plotly
+- scikit-learn (`StandardScaler` and `KMeans`)
+- Jupyter Notebook
 
-    Use of logarithmic axes and transformations to better visualize astronomical scale data
+## Workflow and Analysis
 
-Highlights
+1. Load the HYG v4.1 catalog into pandas and a local SQLite database.
+2. Query a sample through SQL and inspect the catalog's 119,626 records.
+3. Filter magnitude outliers and remove incomplete rows for selected analyses.
+4. Visualize distributions, pairwise relationships, correlations, and logarithmic-scale comparisons.
+5. Standardize luminosity, distance, and color-index features.
+6. Apply three-cluster KMeans as an exploratory segmentation technique.
+7. Plot stellar positions in three dimensions with Matplotlib and Plotly.
 
-    Handled large datasets with repetitive values
+## Key Results and What This Demonstrates
 
-    Used clustering to separate different populations of stars based on physical properties
+- The notebook reports a weak Pearson correlation of approximately 0.126 between apparent magnitude and distance in the unfiltered catalog.
+- KMeans separates the selected standardized features into three exploratory groups; the clusters are not presented as established astrophysical classifications.
+- The project demonstrates large-catalog ingestion, SQL access, missing-value handling, scaling, clustering, and scientific plotting across very different numerical ranges.
 
-    Applied log transformations to bring out relationships hidden in linear space
+## Visualization
 
-    Explored plotting challenges in Jupyter and GitHub display environments
+![Three-dimensional stellar position plot](3d%20interactive%20plot.png)
 
- View the Notebook
+## Repository Contents
 
-     Open in nbviewer(https://nbviewer.org/)
-    (Use this link to see the full notebook with plots rendered correctly)
+| Path | Description |
+| --- | --- |
+| [`HYG star.ipynb`](HYG%20star.ipynb) | Catalog exploration, SQL workflow, clustering, and visualizations |
+| [`3d interactive plot.png`](3d%20interactive%20plot.png) | Saved view of the three-dimensional position analysis |
+
+## Viewing and Reproducibility Notes
+
+[View the notebook in nbviewer](https://nbviewer.org/github/Salgadod123/Star-Data-Project/blob/main/HYG%20star.ipynb) if GitHub does not render every plot.
+
+The HYG source CSV is not stored in this repository, and the notebook currently references a local file path. A later reproducibility pass should add a documented download source and configurable data path.
